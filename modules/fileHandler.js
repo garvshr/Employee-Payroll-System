@@ -1,11 +1,11 @@
-const fs = require('fs').promises
+const fs = require('fs').promises;
 const path = require('path');
 
-const filePath = path.join(__dirname,'../employees.json')
+const filePath = path.join(__dirname, '../employees.json');
 
-async function read(){
+async function read() {
     try {
-        const data = await fs.readFile(filePath,'utf-8')
+        const data = await fs.readFile(filePath, 'utf-8');
         return JSON.parse(data);
     } catch (err) {
         console.error("Read Error:", err);
@@ -13,13 +13,12 @@ async function read(){
     }
 }
 
-async function write(){
+async function write(data) {   // ← data must be parameter
     try {
-        await fs.writeFile(filePath,JSON.stringify(data,null,2))
+        await fs.writeFile(filePath, JSON.stringify(data, null, 2));
     } catch (err) {
         console.error("Write Error:", err);
-
     }
 }
 
-module.exports = { read,write }
+module.exports = { read, write };

@@ -1,8 +1,17 @@
 [
     {
+        "id": 1,
         "name": "John Doe",
         "department": "Engineering",
         "salary": 75000, 
+        "tax": 15000,
+        "net": 60000
+    },
+    {
+        "id": 2,
+        "name": "Jane Smith",
+        "department": "Marketing",
+        "salary": 65000, 
         "tax": 15000,
         "net": 60000
     }
