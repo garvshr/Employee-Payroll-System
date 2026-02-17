@@ -1,11 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Employee Dashboard</title>
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-    
+
+<h1>Employee Payroll Dashboard</h1>
+
+<a href="/add">Add Employee</a>
+
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Department</th>
+        <th>Basic Salary</th>
+        <th>Tax (12%)</th>
+        <th>Net Salary</th>
+        <th>Actions</th>
+    </tr>
+
+    <% employees.forEach(emp => { %>
+        <% 
+            const tax = emp.salary * 0.12;
+            const net = emp.salary - tax;
+        %>
+
+        <tr>
+            <td><%= emp.name %></td>
+            <td><%= emp.department %></td>
+            <td><%= emp.salary %></td>
+            <td><%= tax %></td>
+            <td><%= net %></td>
+            <td>
+                <a href="/edit/<%= emp.id %>">Edit</a>
+                <a href="/delete/<%= emp.id %>">Delete</a>
+            </td>
+        </tr>
+    <% }) %>
+
+</table>
+
 </body>
 </html>

@@ -1,0 +1,9 @@
+[
+    {
+        "name": "John Doe",
+        "department": "Engineering",
+        "salary": 75000, 
+        "tax": 15000,
+        "net": 60000
+    }
+]
